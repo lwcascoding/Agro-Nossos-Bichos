@@ -26,7 +26,7 @@ from seo import (
 def create_app(config=None):
     app = Flask(__name__)
     app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY", "dev-admin-secret")
-    app.config["DATABASE"] = "agro_nossos_bichos.db"
+    app.config["DATABASE"] = "admin_produtos_agronossosbichos.db"
     app.config["UPLOAD_FOLDER"] = "static/uploads/produtos"
     app.config["MAX_CONTENT_LENGTH"] = 5 * 1024 * 1024
     app.jinja_loader = ChoiceLoader(
