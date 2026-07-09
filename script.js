@@ -41,14 +41,6 @@ const productSlides = [
     seal: "para levar hoje",
     visual: "cuidados",
   },
-  {
-    title: "Banho e Tosa",
-    text: "Banho gostoso, tosa caprichada e aquele cuidado para o pet voltar cheiroso, leve e pronto para ganhar carinho em casa.",
-    tags: ["Banho", "Tosa", "Higiene", "Agendamento"],
-    badges: ["agenda aberta", "cuidado no detalhe"],
-    seal: "saindo cheiroso",
-    visual: "banho",
-  },
 ];
 
 let activeProductSlide = 0;
@@ -169,7 +161,7 @@ function createProductCard(product) {
   buyButton.href = getWhatsappBuyLink(product);
   buyButton.target = "_blank";
   buyButton.rel = "noreferrer";
-  buyButton.innerHTML = '<img src="assets/whatsapp-icon.png" width="500" height="500" alt="" />Comprar';
+  buyButton.innerHTML = '<img src="assets/whatsapp-icon.webp" width="25" height="25" alt="" decoding="async" />Comprar';
 
   info.append(title, price, buyButton);
   article.append(photoWrap, info);

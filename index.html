@@ -34,6 +34,7 @@
       href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap"
       rel="stylesheet"
     />
+    <link rel="preload" as="image" href="assets/hero-pets-cutout.webp" fetchpriority="high" />
     <link rel="stylesheet" href="styles.css?v=10" />
     <script type="application/ld+json">
       {{ seo.schema|tojson }}
@@ -49,7 +50,7 @@
     <header class="site-header">
       <a class="brand" href="#inicio" aria-label="Agropecuária Nossos Bichos em Volta Redonda - início">
         <span class="logo-shell">
-          <img class="brand-logo" src="assets/logo-agropecuaria-nossos-bichos.jpg" width="640" height="640" alt="Logo da Agropecuária Nossos Bichos em Volta Redonda" />
+          <img class="brand-logo" src="assets/logo-agropecuaria-nossos-bichos.webp" width="64" height="64" alt="Logo da Agropecuária Nossos Bichos em Volta Redonda" decoding="async" />
         </span>
         <span class="brand-name">
           Agropecuária Nossos Bichos
@@ -65,7 +66,6 @@
       <nav class="nav-links" aria-label="Menu principal">
         <a href="#inicio">Início</a>
         <a href="#produtos">Produtos</a>
-        <a href="#servicos">Serviços</a>
         <a href="#sobre">Sobre</a>
         <a href="#localizacao">Localização</a>
         <a href="#avaliacoes">Avaliações</a>
@@ -74,10 +74,10 @@
 
       <div class="social-links" aria-label="Redes sociais da Agropecuária Nossos Bichos">
         <a href="https://api.whatsapp.com/send/?phone=552433467354&text&type=phone_number&app_absent=0" target="_blank" rel="noreferrer" aria-label="WhatsApp da Agropecuária Nossos Bichos">
-          <img src="assets/whatsapp-icon.png" width="500" height="500" alt="" />
+          <img src="assets/whatsapp-icon.webp" width="26" height="26" alt="" decoding="async" />
         </a>
         <a href="https://www.instagram.com/agronbichos/" target="_blank" rel="noreferrer" aria-label="Instagram da Agropecuária Nossos Bichos">
-          <img src="assets/instagram-icon.png" width="360" height="360" alt="" />
+          <img src="assets/instagram-icon.webp" width="26" height="26" alt="" decoding="async" />
         </a>
       </div>
     </header>
@@ -98,7 +98,7 @@
           </div>
           <div class="hero-actions">
             <a class="primary-button whatsapp-button" href="https://api.whatsapp.com/send/?phone=552433467354&text&type=phone_number&app_absent=0" target="_blank" rel="noreferrer">
-              <img src="assets/whatsapp-icon.png" width="500" height="500" alt="" />
+              <img src="assets/whatsapp-icon.webp" width="25" height="25" alt="" decoding="async" />
               Fale com a gente
             </a>
             <a class="secondary-link" href="#produtos">Ver produtos <span>›</span></a>
@@ -113,10 +113,12 @@
           <div class="pet-window">
             <img
               class="hero-pets-photo"
-              src="assets/hero-pets-cutout.png"
+              src="assets/hero-pets-cutout.webp"
               width="458"
               height="545"
               alt="Cachorro e gato representando os pets atendidos pela Agropecuária Nossos Bichos em Volta Redonda"
+              fetchpriority="high"
+              decoding="async"
             />
           </div>
         </div>
@@ -171,7 +173,7 @@
                   {% if produto.foto %}
                     <img src="{{ url_for('static', filename=produto.foto.replace('static/', '', 1)) }}" alt="{{ product_image_alt(produto.nome) }}" loading="lazy" decoding="async" />
                   {% else %}
-                    <img src="assets/logo-agropecuaria-nossos-bichos.jpg" width="640" height="640" alt="{{ product_image_alt(produto.nome) }}" loading="lazy" decoding="async" />
+                    <img src="assets/logo-agropecuaria-nossos-bichos.webp" width="64" height="64" alt="{{ product_image_alt(produto.nome) }}" loading="lazy" decoding="async" />
                   {% endif %}
                 </div>
                 <div class="store-product-info">
@@ -183,7 +185,7 @@
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <img src="assets/whatsapp-icon.png" width="500" height="500" alt="" />
+                    <img src="assets/whatsapp-icon.webp" width="25" height="25" alt="" decoding="async" />
                     Comprar
                   </a>
                 </div>
@@ -198,53 +200,11 @@
               para consultar rações, acessórios pet, petiscos e itens de cuidado disponíveis.
             </p>
             <a class="product-buy-button" href="https://api.whatsapp.com/send/?phone=552433467354&text=Ol%C3%A1%2C%20gostaria%20de%20saber%20quais%20produtos%20est%C3%A3o%20dispon%C3%ADveis&type=phone_number&app_absent=0" target="_blank" rel="noreferrer">
-              <img src="assets/whatsapp-icon.png" width="500" height="500" alt="" />
+              <img src="assets/whatsapp-icon.webp" width="25" height="25" alt="" decoding="async" />
               Chamar no WhatsApp
             </a>
           </div>
         </div>
-      </section>
-
-      <section class="services section-shell" id="servicos">
-        <div class="services-heading reveal">
-          <p class="eyebrow">Serviços pet em Volta Redonda</p>
-          <h2>Banho e tosa com atendimento próximo</h2>
-          <p>
-            Além de rações, petiscos e acessórios, a Agropecuária Nossos Bichos também
-            oferece cuidado para a rotina de higiene dos pets. Consulte a equipe para saber
-            sobre disponibilidade e orientações antes de levar seu animal.
-          </p>
-        </div>
-
-        <article class="service-card reveal">
-          <div class="service-media">
-            <img
-              src="assets/banho-e-tosa.jpg"
-              width="2560"
-              height="1855"
-              alt="Banho e tosa para pets na Agropecuária Nossos Bichos em Volta Redonda"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-          <div class="service-copy">
-            <p class="eyebrow">Banho e tosa</p>
-            <h3>Cuidado para o pet voltar limpo, leve e cheiroso</h3>
-            <p>
-              Fale com a loja em Volta Redonda para consultar o serviço de banho e tosa,
-              tirar dúvidas sobre cuidados de higiene e combinar a melhor forma de atendimento.
-            </p>
-            <a
-              class="primary-button whatsapp-button"
-              href="https://api.whatsapp.com/send/?phone=552433467354&text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20banho%20e%20tosa&type=phone_number&app_absent=0"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img src="assets/whatsapp-icon.png" width="500" height="500" alt="" />
-              Consultar banho e tosa
-            </a>
-          </div>
-        </article>
       </section>
 
       <section class="about section-shell" id="sobre">
@@ -339,15 +299,15 @@
             ou pedir uma indicação com calma.
           </p>
           <a class="primary-button whatsapp-button" href="https://api.whatsapp.com/send/?phone=552433467354&text&type=phone_number&app_absent=0" target="_blank" rel="noreferrer">
-            <img src="assets/whatsapp-icon.png" width="500" height="500" alt="" />
+            <img src="assets/whatsapp-icon.webp" width="25" height="25" alt="" decoding="async" />
             Fale com a gente
           </a>
           <div class="contact-social-links" aria-label="Redes sociais">
             <a href="https://api.whatsapp.com/send/?phone=552433467354&text&type=phone_number&app_absent=0" target="_blank" rel="noreferrer" aria-label="WhatsApp da Agropecuária Nossos Bichos">
-              <img src="assets/whatsapp-icon.png" width="500" height="500" alt="" />
+              <img src="assets/whatsapp-icon.webp" width="25" height="25" alt="" decoding="async" />
             </a>
             <a href="https://www.instagram.com/agronbichos/" target="_blank" rel="noreferrer" aria-label="Instagram da Agropecuária Nossos Bichos">
-              <img src="assets/instagram-icon.png" width="360" height="360" alt="" />
+              <img src="assets/instagram-icon.webp" width="26" height="26" alt="" decoding="async" />
             </a>
           </div>
         </div>
@@ -359,7 +319,7 @@
         <div class="footer-brand">
           <a class="brand" href="#inicio" aria-label="Agropecuária Nossos Bichos em Volta Redonda - início">
             <span class="logo-shell">
-              <img class="brand-logo" src="assets/logo-agropecuaria-nossos-bichos.jpg" width="640" height="640" alt="Logo da Agropecuária Nossos Bichos em Volta Redonda" loading="lazy" decoding="async" />
+              <img class="brand-logo" src="assets/logo-agropecuaria-nossos-bichos.webp" width="64" height="64" alt="Logo da Agropecuária Nossos Bichos em Volta Redonda" loading="lazy" decoding="async" />
             </span>
             <span class="brand-name">
               Agropecuária Nossos Bichos
@@ -367,15 +327,15 @@
             </span>
           </a>
           <p>
-            Ração, acessórios pet, banho e tosa e um agrado para quem deixa a casa mais feliz.
+            Ração, acessórios pet e um agrado para quem deixa a casa mais feliz.
             Uma agropecuária em Volta Redonda para resolver a rotina do seu pet com calma e carinho.
           </p>
           <div class="footer-social-links" aria-label="Redes sociais da Agropecuária Nossos Bichos">
             <a href="https://api.whatsapp.com/send/?phone=552433467354&text&type=phone_number&app_absent=0" target="_blank" rel="noreferrer" aria-label="WhatsApp da Agropecuária Nossos Bichos">
-              <img src="assets/whatsapp-icon.png" width="500" height="500" alt="" />
+              <img src="assets/whatsapp-icon.webp" width="26" height="26" alt="" loading="lazy" decoding="async" />
             </a>
             <a href="https://www.instagram.com/agronbichos/" target="_blank" rel="noreferrer" aria-label="Instagram da Agropecuária Nossos Bichos">
-              <img src="assets/instagram-icon.png" width="360" height="360" alt="" />
+              <img src="assets/instagram-icon.webp" width="26" height="26" alt="" loading="lazy" decoding="async" />
             </a>
           </div>
         </div>
@@ -384,7 +344,6 @@
           <h3>Navegação</h3>
           <a href="#inicio">Início</a>
           <a href="#produtos">Produtos</a>
-          <a href="#servicos">Serviços</a>
           <a href="#sobre">Sobre</a>
           <a href="#localizacao">Localização</a>
           <a href="#avaliacoes">Avaliações</a>

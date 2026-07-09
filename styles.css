@@ -60,6 +60,11 @@ a {
   text-decoration: none;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 h1,
 h2,
 h3,
@@ -707,6 +712,16 @@ h3 {
   overflow: visible;
 }
 
+.products,
+.about,
+.location,
+.reviews,
+.contact,
+.site-footer {
+  content-visibility: auto;
+  contain-intrinsic-size: 720px;
+}
+
 .products::before {
   position: absolute;
   top: clamp(-102px, -7vw, -66px);
@@ -822,18 +837,13 @@ h3 {
 
 .product-display[data-visual="racoes"] .product-photo-racoes,
 .product-display[data-visual="petiscos"] .product-photo-petiscos,
-.product-display[data-visual="cuidados"] .product-photo-cuidados,
-.product-display[data-visual="banho"] .product-photo-banho {
+.product-display[data-visual="cuidados"] .product-photo-cuidados {
   display: block;
 }
 
 .product-showcase:hover .product-photo {
   transform: translateY(-8px) scale(1.025);
   filter: drop-shadow(0 34px 28px rgba(42, 31, 24, 0.23));
-}
-
-.product-photo-banho {
-  max-height: 350px;
 }
 
 .floating-seal {
@@ -933,6 +943,7 @@ h3 {
   grid-template-rows: clamp(210px, 22vw, 270px) auto;
   min-width: 0;
   overflow: hidden;
+  contain: layout paint;
   transition: transform 220ms ease, box-shadow 220ms ease;
 }
 
@@ -1021,67 +1032,6 @@ h3 {
 .products-empty p {
   color: rgba(18, 35, 63, 0.74);
   line-height: 1.65;
-}
-
-.services {
-  padding: 42px 0 74px;
-}
-
-.services-heading {
-  display: grid;
-  gap: 8px;
-  max-width: 760px;
-  margin-bottom: clamp(24px, 4vw, 36px);
-}
-
-.services-heading p,
-.service-copy p {
-  margin-bottom: 0;
-  color: rgba(18, 35, 63, 0.76);
-  font-size: 1.08rem;
-  line-height: 1.65;
-}
-
-.service-card {
-  display: grid;
-  grid-template-columns: minmax(280px, 0.92fr) minmax(0, 1fr);
-  gap: clamp(22px, 4vw, 42px);
-  align-items: center;
-  padding: clamp(18px, 3vw, 28px);
-  border: 1px solid rgba(255, 255, 255, 0.78);
-  border-radius: 34px;
-  background: rgba(255, 255, 255, 0.74);
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(16px);
-}
-
-.service-media {
-  min-height: 0;
-  overflow: hidden;
-  border-radius: 26px;
-  aspect-ratio: 4 / 3;
-  background: #fff;
-}
-
-.service-media img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.service-copy {
-  display: grid;
-  justify-items: start;
-  gap: 14px;
-}
-
-.service-copy h3 {
-  max-width: 560px;
-  margin-bottom: 0;
-  color: #12233f;
-  font-size: clamp(1.8rem, 4vw, 3.2rem);
-  line-height: 1.04;
 }
 
 .about,
@@ -1306,6 +1256,7 @@ h3 {
   position: relative;
   padding: 24px;
   border-radius: 28px;
+  contain: layout paint;
   transition: transform 220ms ease, box-shadow 220ms ease;
 }
 
@@ -1667,7 +1618,6 @@ h3 {
 
   .hero,
   .product-showcase,
-  .service-card,
   .location {
     grid-template-columns: 1fr;
   }
@@ -1835,15 +1785,6 @@ h3 {
     padding: 16px;
   }
 
-  .service-card {
-    padding: 16px;
-    border-radius: 24px;
-  }
-
-  .service-media {
-    border-radius: 18px;
-  }
-
   .reviews-summary {
     display: grid;
   }
@@ -1858,12 +1799,8 @@ h3 {
   body {
     width: 100%;
     max-width: 100%;
-    background:
-      radial-gradient(circle at 16% 22%, rgba(255, 207, 36, 0.1), transparent 26%),
-      radial-gradient(circle at 86% 12%, rgba(112, 207, 147, 0.16), transparent 24%),
-      radial-gradient(circle at 20% 20%, rgba(47, 36, 31, 0.035) 0 1px, transparent 1px),
-      var(--cream);
-    background-size: auto, auto, 26px 26px, auto;
+    background: var(--cream);
+    background-size: auto;
     overflow-x: hidden;
   }
 
@@ -1878,6 +1815,26 @@ h3 {
   .site-footer {
     max-width: 100%;
     overflow-x: hidden;
+  }
+
+  .products,
+  .about,
+  .location,
+  .reviews,
+  .contact,
+  .site-footer {
+    content-visibility: visible;
+    contain-intrinsic-size: 620px;
+  }
+
+  .products {
+    contain: none;
+    overflow-x: clip;
+  }
+
+  .ambient-paws,
+  .hero::before {
+    display: none;
   }
 
   .product-photo {
@@ -1904,18 +1861,41 @@ h3 {
 
   .product-photo,
   .map-card iframe,
-  .hero-pets-photo {
+  .hero-pets-photo,
+  .store-product-photo img {
     filter: none;
     transition: transform 180ms ease;
   }
 
   .product-showcase:hover .product-photo,
-  .map-card:hover iframe {
+  .map-card:hover iframe,
+  .store-product-card:hover,
+  .review-card:hover,
+  .primary-button:hover,
+  .product-buy-button:hover {
     transform: none;
   }
 
   .site-header {
-    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: 0 12px 30px rgba(31, 111, 235, 0.12);
+    backdrop-filter: none;
+  }
+
+  .trust-strip,
+  .store-product-card,
+  .products-empty,
+  .about-panel,
+  .location-copy,
+  .map-card,
+  .contact-content,
+  .review-card,
+  .reviews,
+  .social-links a,
+  .contact-social-links a,
+  .footer-social-links a {
+    box-shadow: 0 12px 28px rgba(18, 35, 63, 0.1);
+    backdrop-filter: none;
   }
 }
 

@@ -179,18 +179,6 @@ def build_home_schema(produtos, canonical_url):
                 }
             ],
         },
-        {
-            "@type": "Service",
-            "@id": f"{canonical_url}#servico-banho-e-tosa",
-            "name": "Banho e tosa em Volta Redonda",
-            "serviceType": "Banho e tosa pet",
-            "provider": {"@id": business_id},
-            "areaServed": {
-                "@type": "City",
-                "name": BUSINESS_CITY,
-                "addressRegion": BUSINESS_REGION,
-            },
-        },
     ]
 
     product_items = []
