@@ -5,15 +5,16 @@ from flask import (
     Response,
     jsonify,
     render_template,
-    render_template_string,
     request,
     send_from_directory,
     url_for,
 )
+from jinja2 import ChoiceLoader, FileSystemLoader
 
 from admin_produtos import admin_produtos_bp, get_db, init_app as init_produtos_app
 from seo import (
     WHATSAPP_PHONE,
+    build_default_seo,
     build_home_seo,
     build_not_found_seo,
     build_product_image_alt,
@@ -28,6 +29,12 @@ def create_app(config=None):
     app.config["DATABASE"] = "agro_nossos_bichos.db"
     app.config["UPLOAD_FOLDER"] = "static/uploads/produtos"
     app.config["MAX_CONTENT_LENGTH"] = 5 * 1024 * 1024
+    app.jinja_loader = ChoiceLoader(
+        [
+            app.jinja_loader,
+            FileSystemLoader(app.root_path),
+        ]
+    )
 
     if config:
         app.config.update(config)
@@ -45,17 +52,22 @@ def create_app(config=None):
     def format_brl(value):
         return f"R$ {value:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
 
+    @app.context_processor
+    def inject_default_template_context():
+        return {
+            "seo": build_default_seo(),
+            "whatsapp_phone": WHATSAPP_PHONE,
+            "product_image_alt": build_product_image_alt,
+        }
+
     @app.get("/")
     def index():
         produtos = get_db().execute(
             "SELECT id, nome, preco, foto FROM produtos ORDER BY id DESC"
         ).fetchall()
 
-        with open(os.path.join(app.root_path, "index.html"), encoding="utf-8") as file:
-            template = file.read()
-
-        return render_template_string(
-            template,
+        return render_template(
+            "index.html",
             produtos=produtos,
             seo=build_home_seo(produtos),
             whatsapp_phone=WHATSAPP_PHONE,

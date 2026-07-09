@@ -46,7 +46,23 @@ def build_meta(title, description, canonical_url, robots="index, follow"):
         "site_name": SITE_NAME,
         "locale": "pt_BR",
         "twitter_card": "summary_large_image",
+        "schema": None,
     }
+
+
+def build_default_seo():
+    return build_meta(
+        title=(
+            "Agropecuária Nossos Bichos em Volta Redonda | "
+            "Rações, Pets e Produtos Agropecuários"
+        ),
+        description=(
+            "Agropecuária Nossos Bichos em Volta Redonda RJ. Encontre rações, "
+            "produtos para pets, acessórios e itens agropecuários com atendimento "
+            "especializado."
+        ),
+        canonical_url=current_page_url(),
+    )
 
 
 def build_product_image_alt(product_name):
