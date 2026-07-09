@@ -5,10 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Agropecuária nossos bichos: agropecuária local com rações, petiscos, banho e tosa, cuidados e atendimento próximo."
+      content="{{ seo.description }}"
     />
-    <title>Agropecuária nossos bichos | Agropecuária</title>
+    <meta name="robots" content="{{ seo.robots }}" />
+    <meta name="author" content="{{ seo.site_name }}" />
+    <meta name="google-site-verification" content="google8d88adeac885fa39.html" />
+    <meta name="geo.region" content="BR-RJ" />
+    <meta name="geo.placename" content="Volta Redonda, Rio de Janeiro" />
+    <link rel="canonical" href="{{ seo.canonical_url }}" />
+    <meta property="og:locale" content="{{ seo.locale }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="{{ seo.site_name }}" />
+    <meta property="og:title" content="{{ seo.title }}" />
+    <meta property="og:description" content="{{ seo.description }}" />
+    <meta property="og:url" content="{{ seo.canonical_url }}" />
+    <meta property="og:image" content="{{ seo.image_url }}" />
+    <meta property="og:image:alt" content="{{ seo.image_alt }}" />
+    <meta name="twitter:card" content="{{ seo.twitter_card }}" />
+    <meta name="twitter:title" content="{{ seo.title }}" />
+    <meta name="twitter:description" content="{{ seo.description }}" />
+    <meta name="twitter:image" content="{{ seo.image_url }}" />
+    <title>{{ seo.title }}</title>
     <link rel="icon" type="image/jpeg" href="assets/logo-agropecuaria-nossos-bichos.jpg" />
+    <link rel="apple-touch-icon" href="assets/logo-agropecuaria-nossos-bichos.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,6 +35,9 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css?v=10" />
+    <script type="application/ld+json">
+      {{ seo.schema|tojson }}
+    </script>
   </head>
   <body>
     <div class="ambient-paws" aria-hidden="true">
@@ -25,12 +47,12 @@
     </div>
 
     <header class="site-header">
-      <a class="brand" href="#inicio" aria-label="Agropecuária nossos bichos - início">
+      <a class="brand" href="#inicio" aria-label="Agropecuária Nossos Bichos em Volta Redonda - início">
         <span class="logo-shell">
-          <img class="brand-logo" src="assets/logo-agropecuaria-nossos-bichos.jpg" alt="Logo Agropecuária nossos bichos" />
+          <img class="brand-logo" src="assets/logo-agropecuaria-nossos-bichos.jpg" width="640" height="640" alt="Logo da Agropecuária Nossos Bichos em Volta Redonda" />
         </span>
         <span class="brand-name">
-          Agropecuária nossos bichos
+          Agropecuária Nossos Bichos
           <small>Cuidado que eles sentem</small>
         </span>
       </a>
@@ -43,18 +65,19 @@
       <nav class="nav-links" aria-label="Menu principal">
         <a href="#inicio">Início</a>
         <a href="#produtos">Produtos</a>
+        <a href="#servicos">Serviços</a>
         <a href="#sobre">Sobre</a>
         <a href="#localizacao">Localização</a>
         <a href="#avaliacoes">Avaliações</a>
         <a href="#contato">Contato</a>
       </nav>
 
-      <div class="social-links" aria-label="Redes sociais da Agropecuária nossos bichos">
-        <a href="https://api.whatsapp.com/send/?phone=552433467354&text&type=phone_number&app_absent=0" target="_blank" rel="noreferrer" aria-label="WhatsApp da Agropecuária nossos bichos">
-          <img src="assets/whatsapp-icon.png" alt="" />
+      <div class="social-links" aria-label="Redes sociais da Agropecuária Nossos Bichos">
+        <a href="https://api.whatsapp.com/send/?phone=552433467354&text&type=phone_number&app_absent=0" target="_blank" rel="noreferrer" aria-label="WhatsApp da Agropecuária Nossos Bichos">
+          <img src="assets/whatsapp-icon.png" width="500" height="500" alt="" />
         </a>
-        <a href="https://www.instagram.com/agronbichos/" target="_blank" rel="noreferrer" aria-label="Instagram da Agropecuária nossos bichos">
-          <img src="assets/instagram-icon.png" alt="" />
+        <a href="https://www.instagram.com/agronbichos/" target="_blank" rel="noreferrer" aria-label="Instagram da Agropecuária Nossos Bichos">
+          <img src="assets/instagram-icon.png" width="360" height="360" alt="" />
         </a>
       </div>
     </header>
@@ -62,27 +85,27 @@
     <main>
       <section class="hero section-shell" id="inicio">
         <div class="hero-copy reveal">
-          <p class="eyebrow">Agropecuária de qualidade, cuidado de família</p>
-          <h1>Seu pet merece mais do que só <span>ração</span></h1>
+          <p class="eyebrow">Agropecuária em Volta Redonda, RJ</p>
+          <h1>Agropecuária Nossos Bichos em Volta Redonda</h1>
           <p class="hero-text">
-            Da ração do mês ao mimo de última hora, a Agropecuária nossos bichos resolve sem complicar.
-            Aqui a gente escuta o tutor, entende a rotina do pet e ajuda a escolher
-            sem empurrar produto.
+            Da ração do mês ao mimo de última hora, a Agropecuária Nossos Bichos atende tutores
+            de Volta Redonda e região com produtos para pets, acessórios e orientação próxima.
+            Aqui a gente escuta, entende a rotina do animal e ajuda a escolher sem empurrar produto.
           </p>
-          <div class="hero-notes" aria-label="Diferenciais da Agropecuária nossos bichos">
+          <div class="hero-notes" aria-label="Diferenciais da Agropecuária Nossos Bichos">
             <span><i class="note-icon person-icon"></i>Atendimento sem pressa</span>
             <span><i class="note-icon heart-chip"></i>Indicação no capricho</span>
           </div>
           <div class="hero-actions">
             <a class="primary-button whatsapp-button" href="https://api.whatsapp.com/send/?phone=552433467354&text&type=phone_number&app_absent=0" target="_blank" rel="noreferrer">
-              <img src="assets/whatsapp-icon.png" alt="" />
+              <img src="assets/whatsapp-icon.png" width="500" height="500" alt="" />
               Fale com a gente
             </a>
             <a class="secondary-link" href="#produtos">Ver produtos <span>›</span></a>
           </div>
         </div>
 
-        <div class="hero-visual reveal" aria-label="Cachorro e gato atendidos pela Agropecuária nossos bichos">
+        <div class="hero-visual reveal" aria-label="Cachorro e gato atendidos pela Agropecuária Nossos Bichos em Volta Redonda">
           <span class="blob blob-main"></span>
           <span class="blob blob-light"></span>
           <span class="floating-doodle doodle-heart"></span>
@@ -91,12 +114,14 @@
             <img
               class="hero-pets-photo"
               src="assets/hero-pets-cutout.png"
-              alt="Cachorro e gato juntos, representando os pets atendidos pela Agropecuária nossos bichos"
+              width="458"
+              height="545"
+              alt="Cachorro e gato representando os pets atendidos pela Agropecuária Nossos Bichos em Volta Redonda"
             />
           </div>
         </div>
 
-        <div class="trust-strip reveal" aria-label="Destaques da Agropecuária nossos bichos">
+        <div class="trust-strip reveal" aria-label="Destaques da Agropecuária Nossos Bichos">
           <article>
             <span class="strip-icon medal-icon"></span>
             <div>
@@ -114,8 +139,8 @@
           <article>
             <span class="strip-icon home-icon"></span>
             <div>
-              <strong>Somos do Retiro</strong>
-              <small>Pertinho de você</small>
+              <strong>Estamos em Volta Redonda</strong>
+              <small>Atendimento local no RJ</small>
             </div>
           </article>
           <article>
@@ -131,9 +156,12 @@
       <section class="products" id="produtos">
         <div class="products-inner section-shell reveal">
           <div class="products-heading">
-            <p class="eyebrow">Nossos Produtos</p>
-            <h2>Produtos da loja</h2>
-            <p>Selecione os produtos para finalizar a compra pelo Whatsapp</p>
+            <p class="eyebrow">Produtos para pets em Volta Redonda</p>
+            <h2>Rações, acessórios pet e itens agropecuários</h2>
+            <p>
+              Encontre produtos cadastrados pela loja e chame a Agropecuária Nossos Bichos
+              no WhatsApp para confirmar disponibilidade, tirar dúvidas e comprar com atendimento local.
+            </p>
           </div>
 
           <div class="product-grid" data-products-grid aria-label="Produtos disponíveis">
@@ -141,9 +169,9 @@
               <article class="store-product-card">
                 <div class="store-product-photo">
                   {% if produto.foto %}
-                    <img src="{{ url_for('static', filename=produto.foto.replace('static/', '', 1)) }}" alt="{{ produto.nome }}" loading="lazy" />
+                    <img src="{{ url_for('static', filename=produto.foto.replace('static/', '', 1)) }}" alt="{{ product_image_alt(produto.nome) }}" loading="lazy" decoding="async" />
                   {% else %}
-                    <img src="assets/logo-agropecuaria-nossos-bichos.jpg" alt="{{ produto.nome }}" loading="lazy" />
+                    <img src="assets/logo-agropecuaria-nossos-bichos.jpg" width="640" height="640" alt="{{ product_image_alt(produto.nome) }}" loading="lazy" decoding="async" />
                   {% endif %}
                 </div>
                 <div class="store-product-info">
@@ -155,7 +183,7 @@
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <img src="assets/whatsapp-icon.png" alt="" />
+                    <img src="assets/whatsapp-icon.png" width="500" height="500" alt="" />
                     Comprar
                   </a>
                 </div>
@@ -165,25 +193,71 @@
 
           <div class="products-empty" data-products-empty {% if produtos %}hidden{% endif %}>
             <h3>Nenhum produto cadastrado ainda</h3>
-            <p>Assim que a equipe adicionar produtos pelo admin, eles aparecem aqui automaticamente.</p>
+            <p>
+              Enquanto a vitrine online é atualizada, fale com a equipe da loja em Volta Redonda
+              para consultar rações, acessórios pet, petiscos e itens de cuidado disponíveis.
+            </p>
             <a class="product-buy-button" href="https://api.whatsapp.com/send/?phone=552433467354&text=Ol%C3%A1%2C%20gostaria%20de%20saber%20quais%20produtos%20est%C3%A3o%20dispon%C3%ADveis&type=phone_number&app_absent=0" target="_blank" rel="noreferrer">
-              <img src="assets/whatsapp-icon.png" alt="" />
+              <img src="assets/whatsapp-icon.png" width="500" height="500" alt="" />
               Chamar no WhatsApp
             </a>
           </div>
         </div>
       </section>
+
+      <section class="services section-shell" id="servicos">
+        <div class="services-heading reveal">
+          <p class="eyebrow">Serviços pet em Volta Redonda</p>
+          <h2>Banho e tosa com atendimento próximo</h2>
+          <p>
+            Além de rações, petiscos e acessórios, a Agropecuária Nossos Bichos também
+            oferece cuidado para a rotina de higiene dos pets. Consulte a equipe para saber
+            sobre disponibilidade e orientações antes de levar seu animal.
+          </p>
+        </div>
+
+        <article class="service-card reveal">
+          <div class="service-media">
+            <img
+              src="assets/banho-e-tosa.jpg"
+              width="2560"
+              height="1855"
+              alt="Banho e tosa para pets na Agropecuária Nossos Bichos em Volta Redonda"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="service-copy">
+            <p class="eyebrow">Banho e tosa</p>
+            <h3>Cuidado para o pet voltar limpo, leve e cheiroso</h3>
+            <p>
+              Fale com a loja em Volta Redonda para consultar o serviço de banho e tosa,
+              tirar dúvidas sobre cuidados de higiene e combinar a melhor forma de atendimento.
+            </p>
+            <a
+              class="primary-button whatsapp-button"
+              href="https://api.whatsapp.com/send/?phone=552433467354&text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20banho%20e%20tosa&type=phone_number&app_absent=0"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src="assets/whatsapp-icon.png" width="500" height="500" alt="" />
+              Consultar banho e tosa
+            </a>
+          </div>
+        </article>
+      </section>
+
       <section class="about section-shell" id="sobre">
         <div class="about-panel reveal">
-          <p class="eyebrow">Sobre a Agropecuária nossos bichos</p>
-          <h2>A loja onde o tutor chega com dúvida e sai mais tranquilo.</h2>
+          <p class="eyebrow">Sobre a Agropecuária Nossos Bichos</p>
+          <h2>A loja em Volta Redonda onde o tutor chega com dúvida e sai mais tranquilo.</h2>
           <p>
-            A Agropecuária nossos bichos é aquela agropecuária para passar rapidinho e acabar conversando
-            sobre o apetite, o banho, o petisco preferido e a fase do seu companheiro.
-            Trabalhamos com variedade, cuidado na indicação e atendimento próximo para
-            cães, gatos e seus tutores.
+            A Agropecuária Nossos Bichos é uma agropecuária de Volta Redonda, RJ, para passar
+            rapidinho e acabar conversando sobre o apetite, o banho, o petisco preferido e a fase
+            do seu companheiro. Trabalhamos com variedade, cuidado na indicação e atendimento
+            próximo para cães, gatos e seus tutores.
           </p>
-          <div class="about-mini-list" aria-label="Cuidados da Agropecuária nossos bichos">
+          <div class="about-mini-list" aria-label="Cuidados da Agropecuária Nossos Bichos">
             <span class="mini-icon bone-icon"></span>
             <span>Ração certa para a rotina</span>
             <span class="mini-icon bowl-icon"></span>
@@ -197,10 +271,10 @@
       <section class="location section-shell" id="localizacao">
         <div class="location-copy reveal">
           <p class="eyebrow">Localização</p>
-          <h2>Venha visitar a Agropecuária nossos bichos</h2>
+          <h2>Venha visitar a Agropecuária Nossos Bichos em Volta Redonda</h2>
           <p>
-            Passe aqui quando faltar ração, quando bater dúvida ou quando seu pet
-            merecer um agrado no caminho de casa.
+            Passe aqui em Volta Redonda, RJ, quando faltar ração, quando bater dúvida
+            ou quando seu pet merecer um agrado no caminho de casa.
           </p>
           <a class="primary-button" href="https://maps.app.goo.gl/mN2von8hsKx4cabq6" target="_blank" rel="noreferrer">
             Ver no mapa
@@ -208,7 +282,7 @@
         </div>
         <div class="map-card reveal">
           <iframe
-            title="Mapa em tempo real da localização da Agropecuária nossos bichos"
+            title="Mapa em tempo real da localização da Agropecuária Nossos Bichos"
             src="https://www.google.com/maps?q=Agropecu%C3%A1ria%20nossos%20bichos&z=16&output=embed"
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
@@ -222,7 +296,7 @@
 
       <section class="reviews" id="avaliacoes">
         <div class="reviews-summary reveal">
-          <p class="eyebrow">Avaliações</p>
+          <p class="eyebrow">Avaliações de clientes</p>
           <div>
             <strong>4,6</strong>
             <span>média dos clientes</span>
@@ -259,18 +333,21 @@
 
       <section class="contact section-shell" id="contato">
         <div class="contact-content reveal">
-          <h2>Está na dúvida do que levar?</h2>
-          <p>Chama no WhatsApp. A gente conversa, pergunta sobre seu pet e indica com calma.</p>
+          <h2>Fale com a Agropecuária Nossos Bichos</h2>
+          <p>
+            Chame no WhatsApp para tirar dúvidas, consultar produtos para pets em Volta Redonda
+            ou pedir uma indicação com calma.
+          </p>
           <a class="primary-button whatsapp-button" href="https://api.whatsapp.com/send/?phone=552433467354&text&type=phone_number&app_absent=0" target="_blank" rel="noreferrer">
-            <img src="assets/whatsapp-icon.png" alt="" />
+            <img src="assets/whatsapp-icon.png" width="500" height="500" alt="" />
             Fale com a gente
           </a>
           <div class="contact-social-links" aria-label="Redes sociais">
-            <a href="https://api.whatsapp.com/send/?phone=552433467354&text&type=phone_number&app_absent=0" target="_blank" rel="noreferrer" aria-label="WhatsApp da Agropecuária nossos bichos">
-              <img src="assets/whatsapp-icon.png" alt="" />
+            <a href="https://api.whatsapp.com/send/?phone=552433467354&text&type=phone_number&app_absent=0" target="_blank" rel="noreferrer" aria-label="WhatsApp da Agropecuária Nossos Bichos">
+              <img src="assets/whatsapp-icon.png" width="500" height="500" alt="" />
             </a>
-            <a href="https://www.instagram.com/agronbichos/" target="_blank" rel="noreferrer" aria-label="Instagram da Agropecuária nossos bichos">
-              <img src="assets/instagram-icon.png" alt="" />
+            <a href="https://www.instagram.com/agronbichos/" target="_blank" rel="noreferrer" aria-label="Instagram da Agropecuária Nossos Bichos">
+              <img src="assets/instagram-icon.png" width="360" height="360" alt="" />
             </a>
           </div>
         </div>
@@ -280,25 +357,25 @@
     <footer class="site-footer">
       <div class="footer-inner">
         <div class="footer-brand">
-          <a class="brand" href="#inicio" aria-label="Agropecuária nossos bichos - início">
+          <a class="brand" href="#inicio" aria-label="Agropecuária Nossos Bichos em Volta Redonda - início">
             <span class="logo-shell">
-              <img class="brand-logo" src="assets/logo-agropecuaria-nossos-bichos.jpg" alt="Logo Agropecuária nossos bichos" />
+              <img class="brand-logo" src="assets/logo-agropecuaria-nossos-bichos.jpg" width="640" height="640" alt="Logo da Agropecuária Nossos Bichos em Volta Redonda" loading="lazy" decoding="async" />
             </span>
             <span class="brand-name">
-              Agropecuária nossos bichos
+              Agropecuária Nossos Bichos
               <small>Cuidado que eles sentem</small>
             </span>
           </a>
           <p>
-            Ração, cuidado e um agrado para quem deixa a casa mais feliz. Uma agropecuária
-            local para resolver a rotina do seu pet com calma e carinho.
+            Ração, acessórios pet, banho e tosa e um agrado para quem deixa a casa mais feliz.
+            Uma agropecuária em Volta Redonda para resolver a rotina do seu pet com calma e carinho.
           </p>
-          <div class="footer-social-links" aria-label="Redes sociais da Agropecuária nossos bichos">
-            <a href="https://api.whatsapp.com/send/?phone=552433467354&text&type=phone_number&app_absent=0" target="_blank" rel="noreferrer" aria-label="WhatsApp da Agropecuária nossos bichos">
-              <img src="assets/whatsapp-icon.png" alt="" />
+          <div class="footer-social-links" aria-label="Redes sociais da Agropecuária Nossos Bichos">
+            <a href="https://api.whatsapp.com/send/?phone=552433467354&text&type=phone_number&app_absent=0" target="_blank" rel="noreferrer" aria-label="WhatsApp da Agropecuária Nossos Bichos">
+              <img src="assets/whatsapp-icon.png" width="500" height="500" alt="" />
             </a>
-            <a href="https://www.instagram.com/agronbichos/" target="_blank" rel="noreferrer" aria-label="Instagram da Agropecuária nossos bichos">
-              <img src="assets/instagram-icon.png" alt="" />
+            <a href="https://www.instagram.com/agronbichos/" target="_blank" rel="noreferrer" aria-label="Instagram da Agropecuária Nossos Bichos">
+              <img src="assets/instagram-icon.png" width="360" height="360" alt="" />
             </a>
           </div>
         </div>
@@ -307,13 +384,19 @@
           <h3>Navegação</h3>
           <a href="#inicio">Início</a>
           <a href="#produtos">Produtos</a>
+          <a href="#servicos">Serviços</a>
           <a href="#sobre">Sobre</a>
+          <a href="#localizacao">Localização</a>
           <a href="#avaliacoes">Avaliações</a>
+          <a href="#contato">Contato</a>
         </div>
 
         <div class="footer-column">
           <h3>Loja</h3>
-          <p>Rações, petiscos, acessórios, higiene e itens de cuidado para cães e gatos.</p>
+          <p>
+            Rações, petiscos, acessórios, higiene e itens de cuidado para cães e gatos
+            em Volta Redonda, RJ.
+          </p>
           <a href="https://maps.app.goo.gl/mN2von8hsKx4cabq6" target="_blank" rel="noreferrer">
             Ver localização
           </a>
@@ -327,12 +410,12 @@
           <a href="https://www.instagram.com/agronbichos/" target="_blank" rel="noreferrer">
             Instagram: @agronbichos
           </a>
-          <p>Fale com a gente para confirmar produtos, tirar dúvidas ou pedir uma indicação.</p>
+          <p>Fale com a gente para confirmar produtos, tirar dúvidas ou pedir uma indicação local.</p>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <span>© 2026 Agropecuária nossos bichos. Todos os direitos reservados.</span>
+        <span>© 2026 Agropecuária Nossos Bichos. Todos os direitos reservados.</span>
         <span>Feito para tutores que cuidam de perto.</span>
       </div>
     </footer>

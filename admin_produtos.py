@@ -14,6 +14,8 @@ from flask import (
 )
 from werkzeug.utils import secure_filename
 
+from seo import build_admin_seo
+
 
 admin_produtos_bp = Blueprint("admin_produtos", __name__)
 
@@ -136,7 +138,11 @@ def listar_produtos():
     produtos = get_db().execute(
         "SELECT id, nome, preco, foto FROM produtos ORDER BY id DESC"
     ).fetchall()
-    return render_template("admin_produtos/lista.html", produtos=produtos)
+    return render_template(
+        "admin_produtos/lista.html",
+        produtos=produtos,
+        seo=build_admin_seo("Painel de produtos | Agropecuária Nossos Bichos"),
+    )
 
 
 @admin_produtos_bp.post("/admin-agronossosbichos/produtos")
@@ -168,7 +174,13 @@ def cadastrar_produto():
 @admin_produtos_bp.get("/admin-agronossosbichos/produtos/<int:produto_id>/editar")
 def editar_produto_form(produto_id):
     produto = get_produto_or_404(produto_id)
-    return render_template("admin_produtos/editar.html", produto=produto)
+    return render_template(
+        "admin_produtos/editar.html",
+        produto=produto,
+        seo=build_admin_seo(
+            f"Editar {produto['nome']} | Painel Agropecuária Nossos Bichos"
+        ),
+    )
 
 
 @admin_produtos_bp.post("/admin-agronossosbichos/produtos/<int:produto_id>/editar")

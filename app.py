@@ -1,11 +1,25 @@
 import os
 
-from flask import Flask, jsonify, render_template_string, request, send_from_directory, url_for
+from flask import (
+    Flask,
+    Response,
+    jsonify,
+    render_template,
+    render_template_string,
+    request,
+    send_from_directory,
+    url_for,
+)
 
 from admin_produtos import admin_produtos_bp, get_db, init_app as init_produtos_app
-
-
-WHATSAPP_PHONE = "552433467354"
+from seo import (
+    WHATSAPP_PHONE,
+    build_home_seo,
+    build_not_found_seo,
+    build_product_image_alt,
+    build_robots_txt,
+    build_sitemap_xml,
+)
 
 
 def create_app(config=None):
@@ -43,7 +57,9 @@ def create_app(config=None):
         return render_template_string(
             template,
             produtos=produtos,
+            seo=build_home_seo(produtos),
             whatsapp_phone=WHATSAPP_PHONE,
+            product_image_alt=build_product_image_alt,
         )
 
     @app.get("/api/produtos")
@@ -59,6 +75,7 @@ def create_app(config=None):
                     "nome": produto["nome"],
                     "preco": produto["preco"],
                     "preco_formatado": format_brl(produto["preco"]),
+                    "foto_alt": build_product_image_alt(produto["nome"]),
                     "foto_url": url_for(
                         "static",
                         filename=produto["foto"].replace("static/", "", 1),
@@ -78,9 +95,36 @@ def create_app(config=None):
     def fonts(filename):
         return send_from_directory(os.path.join(app.root_path, "fonts"), filename)
 
+    @app.get("/sitemap.xml")
+    def sitemap_xml():
+        return Response(build_sitemap_xml(), mimetype="application/xml")
+
+    @app.get("/robots.txt")
+    def robots_txt():
+        return Response(build_robots_txt(), mimetype="text/plain")
+
+    @app.get("/favicon.ico")
+    def favicon():
+        return send_from_directory(
+            os.path.join(app.root_path, "assets"),
+            "logo-agropecuaria-nossos-bichos.jpg",
+            mimetype="image/jpeg",
+        )
+
+    @app.errorhandler(404)
+    def not_found(error):
+        return render_template("errors/404.html", seo=build_not_found_seo()), 404
+
     @app.get("/<path:filename>")
     def root_files(filename):
-        if filename in {"styles.css", "script.js"}:
+        is_google_verification = (
+            "/" not in filename
+            and "\\" not in filename
+            and filename.startswith("google")
+            and filename.endswith(".html")
+            and os.path.isfile(os.path.join(app.root_path, filename))
+        )
+        if filename in {"styles.css", "script.js"} or is_google_verification:
             return send_from_directory(app.root_path, filename)
         return ("Not found", 404)
 

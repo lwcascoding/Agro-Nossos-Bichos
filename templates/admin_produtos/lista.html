@@ -3,7 +3,23 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dashboard - Produtos</title>
+    <meta name="description" content="{{ seo.description }}">
+    <meta name="robots" content="{{ seo.robots }}">
+    <link rel="canonical" href="{{ seo.canonical_url }}">
+    <meta property="og:locale" content="{{ seo.locale }}">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="{{ seo.site_name }}">
+    <meta property="og:title" content="{{ seo.title }}">
+    <meta property="og:description" content="{{ seo.description }}">
+    <meta property="og:url" content="{{ seo.canonical_url }}">
+    <meta property="og:image" content="{{ seo.image_url }}">
+    <meta property="og:image:alt" content="{{ seo.image_alt }}">
+    <meta name="twitter:card" content="{{ seo.twitter_card }}">
+    <meta name="twitter:title" content="{{ seo.title }}">
+    <meta name="twitter:description" content="{{ seo.description }}">
+    <meta name="twitter:image" content="{{ seo.image_url }}">
+    <title>{{ seo.title }}</title>
+    <link rel="icon" type="image/jpeg" href="{{ url_for('assets', filename='logo-agropecuaria-nossos-bichos.jpg') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -456,7 +472,7 @@
     <header class="topbar">
       <div class="topbar-inner">
         <a class="brand" href="{{ url_for('admin_produtos.listar_produtos') }}" aria-label="AgroNotify dashboard">
-          <img src="{{ url_for('assets', filename='logo-agropecuaria-nossos-bichos.jpg') }}" alt="Agropecuária nossos bichos">
+          <img src="{{ url_for('assets', filename='logo-agropecuaria-nossos-bichos.jpg') }}" width="640" height="640" alt="Agropecuária Nossos Bichos">
         </a>
         <nav class="nav" aria-label="Navegação do painel">
           <a href="{{ url_for('index') }}#inicio">In&iacute;cio</a>
@@ -530,7 +546,7 @@
                     <td>{{ produto.id }}</td>
                     <td>
                       {% if produto.foto %}
-                        <img class="thumb" src="{{ url_for('static', filename=produto.foto.replace('static/', '', 1)) }}" alt="{{ produto.nome }}">
+                        <img class="thumb" src="{{ url_for('static', filename=produto.foto.replace('static/', '', 1)) }}" alt="Imagem do produto {{ produto.nome }}" loading="lazy" decoding="async">
                       {% else %}
                         <span class="thumb-placeholder">Sem foto</span>
                       {% endif %}

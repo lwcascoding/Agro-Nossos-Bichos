@@ -148,8 +148,11 @@ function createProductCard(product) {
 
   const photo = document.createElement("img");
   photo.src = product.foto_url;
-  photo.alt = product.nome;
+  photo.alt =
+    product.foto_alt ||
+    `Foto do produto ${product.nome} disponível na Agropecuária Nossos Bichos em Volta Redonda, RJ`;
   photo.loading = "lazy";
+  photo.decoding = "async";
   photoWrap.append(photo);
 
   const info = document.createElement("div");
@@ -166,7 +169,7 @@ function createProductCard(product) {
   buyButton.href = getWhatsappBuyLink(product);
   buyButton.target = "_blank";
   buyButton.rel = "noreferrer";
-  buyButton.innerHTML = '<img src="assets/whatsapp-icon.png" alt="" />Comprar';
+  buyButton.innerHTML = '<img src="assets/whatsapp-icon.png" width="500" height="500" alt="" />Comprar';
 
   info.append(title, price, buyButton);
   article.append(photoWrap, info);

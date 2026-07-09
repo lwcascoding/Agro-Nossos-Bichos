@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://agronossosbichos.com.br/sitemap.xml

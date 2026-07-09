@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ seo.description }}">
+    <meta name="robots" content="{{ seo.robots }}">
+    <link rel="canonical" href="{{ seo.canonical_url }}">
+    <meta property="og:locale" content="{{ seo.locale }}">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="{{ seo.site_name }}">
+    <meta property="og:title" content="{{ seo.title }}">
+    <meta property="og:description" content="{{ seo.description }}">
+    <meta property="og:url" content="{{ seo.canonical_url }}">
+    <meta property="og:image" content="{{ seo.image_url }}">
+    <meta property="og:image:alt" content="{{ seo.image_alt }}">
+    <meta name="twitter:card" content="{{ seo.twitter_card }}">
+    <meta name="twitter:title" content="{{ seo.title }}">
+    <meta name="twitter:description" content="{{ seo.description }}">
+    <meta name="twitter:image" content="{{ seo.image_url }}">
+    <title>{{ seo.title }}</title>
+    <link rel="icon" type="image/jpeg" href="{{ url_for('assets', filename='logo-agropecuaria-nossos-bichos.jpg') }}">
+    <link rel="stylesheet" href="{{ url_for('root_files', filename='styles.css') }}">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="{{ url_for('index') }}#inicio" aria-label="Agropecuária Nossos Bichos em Volta Redonda - início">
+        <span class="logo-shell">
+          <img class="brand-logo" src="{{ url_for('assets', filename='logo-agropecuaria-nossos-bichos.jpg') }}" width="640" height="640" alt="Logo da Agropecuária Nossos Bichos em Volta Redonda">
+        </span>
+        <span class="brand-name">
+          Agropecuária Nossos Bichos
+          <small>Cuidado que eles sentem</small>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="Menu da página não encontrada">
+        <a href="{{ url_for('index') }}#produtos">Produtos</a>
+        <a href="{{ url_for('index') }}#servicos">Serviços</a>
+        <a href="{{ url_for('index') }}#localizacao">Localização</a>
+        <a href="{{ url_for('index') }}#contato">Contato</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="not-found section-shell">
+        <div class="not-found-panel">
+          <p class="eyebrow">Página não encontrada</p>
+          <h1>Essa página não está disponível</h1>
+          <p>
+            Volte para a Agropecuária Nossos Bichos em Volta Redonda e encontre
+            produtos para pets, rações, acessórios, banho e tosa e canais de contato.
+          </p>
+          <div class="not-found-actions">
+            <a class="primary-button" href="{{ url_for('index') }}#produtos">Ver produtos</a>
+            <a class="secondary-link" href="{{ url_for('index') }}#contato">Falar com a loja <span>›</span></a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
